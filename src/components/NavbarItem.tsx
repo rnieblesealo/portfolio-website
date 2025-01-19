@@ -5,7 +5,9 @@ interface NavbarItemProps {
 
 function NavbarItem({ text, url }: NavbarItemProps) {
   return (
-    <li><a href={url}>{text}</a></li>
+    <li className="flex-centered-all navbar-item pixel-body-text">
+      <a href={url}>{text}</a>
+    </li>
   )
 }
 

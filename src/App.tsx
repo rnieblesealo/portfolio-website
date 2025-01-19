@@ -86,19 +86,17 @@ function App() {
   ))
 
   return (
-    <>
-      <header>
-        <nav>
-          <ul>
-            <NavbarItem text="Home" url="/" />
-            <NavbarItem text="About" url="/" />
-            <NavbarItem text="Experience" url="/" />
-            <NavbarItem text="Projects" url="/" />
-          </ul>
-        </nav>
-      </header>
+    <div id="glob-parent" className="flex-centered-v flex-col">
+      <nav className="navbar">
+        <ul className="flex-centered-all max-width max-height navbar-list">
+          <NavbarItem text="Home" url="/" />
+          <NavbarItem text="About" url="/" />
+          <NavbarItem text="Experience" url="/" />
+          <NavbarItem text="Projects" url="/" />
+        </ul>
+      </nav>
       <Profile />
-      <ul>
+      <ul className="language-list flex-centered-all flex-row">
         {langsList}
       </ul>
       <h1>About Me</h1>
@@ -110,13 +108,13 @@ function App() {
         {experienceList}
       </ul>
       <h1>Projects</h1>
-      <ul>
+      <ul className="grid">
         {projectList}
       </ul >
       <footer>
         {/* TODO: Add heart using FontAwesome */}
       </footer>
-    </>
+    </div>
   )
 }
 

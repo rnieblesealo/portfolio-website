@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100..900&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Tiny5&display=swap');
+
+body {
+  background-color: rgba(25, 138, 225, 1);
+}
+
+h1 {
+  font-family: "Tiny5", sans-serif;
+  text-align: center;
+
+  color: white;
+
+  -webkit-text-stroke: 20px rgba(19, 26, 54, 1);
+  paint-order: markers stroke fill;
+}
+
+/* Begin flex display modes */
+
+.flex-container,
+.flex-centered-all,
+.flex-centered-v,
+.flex-centered-h,
+.flex-col,
+.flex-row,
+.gapped {
+  display: flex;
+}
+
+.flex-centered-all {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-centered-h {
+  justify-content: center;
+}
+
+.flex-centered-v {
+  align-items: center;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.gapped {
+  gap: 8px;
+}
+
+/* Grid display */
+
+.grid {
+  display: grid;
+
+  /* 2x2 grid */
+  grid-template-rows: repeat(2, 300px);
+  grid-template-columns: repeat(2, 300px);
+
+  gap: 10px;
+}
+
+.grid-item {
+  /* Take up full space given by grid */
+  width: 100%;
+  height: 100%;
+}
+
+/* Text */
+
+.pixel-body-text {
+  font-family: "Tiny5", sans-serif;
+  color: white
+}
+
+.normal-body-text {
+  font-family: "Funnel Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: white;
+}
+
+.semibold-text {
+  font-style: bold;
+  font-weight: 600;
+}
+
+.bold-text {
+  font-style: bold;
+  font-weight: 800;
+}
+
+.text-big {
+  font-size: 1.75rem;
+}
+
+.image-frame {
+  /* Frame color */
+  background-color: rgba(19, 26, 54, 1);
+
+  /* Frame itself */
+  padding: 30px;
+}
+
+.language-list {
+  /* Frame */
+  background-color: rgba(19, 26, 54, 1);
+  padding: 10px;
+
+  /* Make container as big as content */
+  width: min-content;
+}
+
+.about-info {
+  /* Background */
+  background-color: rgba(19, 26, 54, 1);
+  padding: 10px;
+
+  /* Make text box as big as text inside it */
+  width: min-content;
+  height: min-content;
+}
+
+.experience-info {
+  /* Background */
+  background-color: rgba(19, 26, 54, 1);
+  padding: 10px;
+
+  /* Make text box as big as text inside it */
+  width: max-content;
+  height: min-content;
+}
+
+.profile {
+  /* Give initial offset so it pushes everything a bit down and the navbar doesn't hide it */
+  margin-top: 50px;
+}
+
+.project {
+  /* Background */
+  background-color: rgba(19, 26, 54, 1);
+}
+
+.project-heading {
+  /* Span full block and be .2 the height of container */
+  width: 100%;
+  height: 40%;
+}
+
+.project-desc {
+  /* Fill out remainder of space */
+  width: 100%;
+  height: 100%;
+}
+
+.example-color {
+  background-color: rgba(50, 177, 111, 1)
+}
+
+.bulleted-list-item {
+  list-style-type: square;
+  list-style-position: inside;
+
+  color: white;
+}
+
+.navbar {
+  position: fixed;
+
+  /* Cover full screen; take consistent amt. of vertical height */
+  width: 100%;
+  height: 30px;
+
+  background-color: rgba(19, 26, 54, 1);
+}
+
+.navbar-item {
+  /* Fill out navbar */
+  width: 100%;
+  height: 100%;
+
+  border-left: 0.5px solid white;
+  border-right: 0.5px solid white;
+
+  /* TODO: Fix l, r borders */
+}
+
+.max-width {
+  width: 100%;
+}
+
+.max-height {
+  height: 100%;
+}
