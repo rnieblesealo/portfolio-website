@@ -6,12 +6,22 @@ body {
 
 h1 {
   font-family: "Tiny5", sans-serif;
+  font-size: 4rem;
   text-align: center;
 
   color: white;
 
   -webkit-text-stroke: 20px rgba(19, 26, 54, 1);
   paint-order: markers stroke fill;
+}
+
+#glob-parent {
+  gap: 30px;
+}
+
+#glob-parent>* {
+  /* Place everything on same layer so that we can place backdrop elements behind */
+  z-index: 1;
 }
 
 /* Begin flex display modes */
@@ -59,14 +69,15 @@ h1 {
   /* 2x2 grid */
   grid-template-rows: repeat(2, 300px);
   grid-template-columns: repeat(2, 300px);
-
-  gap: 10px;
 }
 
 .grid-item {
   /* Take up full space given by grid */
   width: 100%;
   height: 100%;
+
+  /* Include padding in width + height */
+  box-sizing: border-box;
 }
 
 /* Text */
@@ -102,7 +113,7 @@ h1 {
   background-color: rgba(19, 26, 54, 1);
 
   /* Frame itself */
-  padding: 30px;
+  padding: 20px;
 }
 
 .language-list {
@@ -135,23 +146,46 @@ h1 {
 }
 
 .profile {
-  /* Give initial offset so it pushes everything a bit down and the navbar doesn't hide it */
+  /* Give initial offset so it pushes everything a bit down */
   margin-top: 50px;
+}
+
+.profile-name {
+  margin-top: -50px;
+  /* Makes name overlap with picture a bit */
+  width: 50%;
+  /* Makes name be above last name */
+
+  /* Make a bit more header-y */
+  line-height: 90%;
+  font-size: 4.5rem;
+  -webkit-text-stroke: 40px rgba(19, 26, 54, 1);
 }
 
 .project {
   /* Background */
   background-color: rgba(19, 26, 54, 1);
+
+  /* Give everything a frame */
+  padding: 15px;
 }
 
 .project-heading {
   /* Span full block and be .2 the height of container */
   width: 100%;
-  height: 40%;
+  height: 25%;
 }
 
 .project-desc {
   /* Fill out remainder of space */
+  width: 100%;
+  height: 10%;
+
+  text-align: center;
+}
+
+.project-img {
+  /* Fill all available space */
   width: 100%;
   height: 100%;
 }
@@ -175,6 +209,9 @@ h1 {
   height: 30px;
 
   background-color: rgba(19, 26, 54, 1);
+
+  z-index: 999 !important;
+  /* Override precedence of more specific setting */
 }
 
 .navbar-item {
@@ -194,4 +231,61 @@ h1 {
 
 .max-height {
   height: 100%;
+}
+
+.clouds {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+
+.clouds>* {
+  /* Nearest-neighbor resizing */
+  image-rendering: pixelated;
+
+  /* Position independently */
+  position: absolute;
+
+  /* Use center as pivot point */
+  transform: translate(-50%, -50%);
+
+  /* Place behind */
+  z-index: 0;
+}
+
+.clouds> :nth-child(1) {
+  /* NOTE: n-th child select siblings; this is how you select from parent! */
+  top: 15%;
+  left: 15%;
+}
+
+.clouds> :nth-child(2) {
+  top: 50%;
+  left: 85%;
+}
+
+.clouds> :nth-child(3) {
+  top: 90%;
+  left: 20%;
+
+  /* Flip it! */
+  transform: translate(-50%, -50%) scaleX(-1)
+}
+
+/* Colors, there might be a better way to do this... */
+
+.bg-red {
+  background-color: rgba(196, 59, 93, 1);
+}
+
+.bg-blue {
+  background-color: rgba(25, 138, 225, 1);
+}
+
+.bg-green {
+  background-color: rgba(49, 163, 121, 1);
+}
+
+.bg-yellow {
+  background-color: rgba(255, 156, 51, 1);
 }

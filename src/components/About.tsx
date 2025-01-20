@@ -9,7 +9,7 @@ const aboutImgDimensions = [100, 100]
 function About({ imgSrc, imgAlt, details }: AboutProps) {
   return (
     <li>
-      <div className="flex-row">
+      <div className="flex-row flex-centered-v">
         <img
           className ="image-frame normal-body-text"
           src={`${imgSrc}`}

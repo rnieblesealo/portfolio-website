@@ -1,19 +1,28 @@
+import Language from "./Language"
+
 interface ProjectProps {
   name: string
   link: string
   imgSrc: string
   desc: string
+  langs: string[] | undefined
+  color: string | undefined
 }
 
-const projectImgDimensions = [100, 100]
+function Project({ name, link, imgSrc, desc, langs, color }: ProjectProps) {
+  const langsList = langs?.map((lang) => (
+    <Language lang={lang} />
+  ))
 
-function Project({ name, link, imgSrc, desc }: ProjectProps) {
   return (
     <li className="flex-centered-all flex-col">
-      <a href={link} className="flex-centered-v flex-col project grid-item">
-        <h3 className="project-heading flex-centered-all normal-body-text text-bold text-big example-color">{name}</h3>
-        <img className="normal-body-text" src={imgSrc} width={`${projectImgDimensions[0]}`} height={`${projectImgDimensions[1]}`} alt={`${name} image/GIF`} />
-        <p className="flex-centered-all project-desc normal-body-text">{desc}</p>
+      <a href={link} className="flex-centered-v flex-col project grid-item gapped">
+        <h3 className={`project-heading flex-centered-all normal-body-text text-bold text-big bg-${color}`}>{name}</h3>
+        <img className="project-img normal-body-text" src={imgSrc} alt={`${name} image/GIF`} />
+        <p className="flex-centered-all project-desc normal-body-text semibold-text">{desc}</p>
+        <ul className="flex-centered-all flex-row text-big gapped">
+          {langsList}
+        </ul>
       </a>
     </li>
   )

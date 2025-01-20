@@ -5,7 +5,7 @@ interface LanguageProps {
 function Language({ lang }: LanguageProps) {
   return (
     <li>
-      <i className={`devicon-${lang}-plain colored`} />
+      <i className={`devicon-${lang}-plain normal-body-text`} />
     </li>
   )
 }
