@@ -23,12 +23,37 @@ const LANGUAGES = [
 ]
 
 const ABOUT = [
-  { imgSrc: "", imgAlt: "Illustration", details: "This is something about me!" },
-  { imgSrc: "", imgAlt: "Another illustration", details: "This is something else about me!" }
+  { imgSrc: "./images/ucf.png", imgAlt: "Knightro", details: "I attend UCF for a bachelor's in Computer Science and a minor in Math!" },
+  { imgSrc: "./images/colombia.png", imgAlt: "Colombia art", details: "I'm a proud permanent resident from Colombia! I speak both Spanish and English." },
+  { imgSrc: "./images/running.png", imgAlt: "Man running", details: "I love running! Recently, I did my first half-marathon." },
+  { imgSrc: "./images/guitar.png", imgAlt: "Guitar", details: "I'm a musician! While at UCF, I've also played guitar for a couple local bands." },
+  { imgSrc: "./images/heathers.png", imgAlt: "Heathers", details: "My favorite movie is Heathers." },
 ]
 
 
 const EXPERIENCES = [
+  {
+    companyName: "KnightHacks",
+    role: "Workshop Instructor",
+    details: "I'm currently an iOS development workshop teacher for KnightHacks, where I introduce curious students to the world of mobile app dev. through a beginner-friendly, fun game project. Below are some of the topics I taught!",
+    imgSrc: "./images/knighthacks.jpg",
+    bullets: [
+      "Using XCode and its file explorer, inspector, and debugger.",
+      "The Swift language and its special features (optionals, unwrapping, computed properties, etc.)",
+      "Common iOS API's and frameworks, including SpriteKit, UIKit, and AVFoundation.",
+      "Multithreading using DispatchQueue",
+      "iOS app architecture (ViewControllers, SceneControllers, Windows, etc.)"
+    ]
+  },
+  {
+    companyName: "KnightHacks",
+    role: "Full-Stack Project Lead",
+    imgSrc: "./images/knighthacks.jpg",
+    bullets: [
+      "Taught iOS",
+      "Lead fullstack project"
+    ]
+  },
   {
     companyName: "HYEL, Inc.",
     role: "iOS Software Engineer",
@@ -38,22 +63,13 @@ const EXPERIENCES = [
       "Shipped it in only 4 months!"
     ]
   },
-  {
-    companyName: "KnightHacks",
-    role: "Member",
-    imgSrc: "./images/knighthacks.jpg",
-    bullets: [
-      "Taught iOS",
-      "Lead fullstack project"
-    ]
-  }
 ]
 
 const PROJECTS = [
   { name: "Dower Tefense", link: "https://github.com/rnieblesealo/cpp-sdl-td", imgSrc: "./images/dower-tefense.gif", desc: "Point-and-click tower defense game built in C++ using SDL2 for graphics.", langs: ["cplusplus", "sdl", "cmake"], color: "red" },
-  { name: "CHIP-8 Emulator", link: "", imgSrc: "./images/chip8.gif", desc: "CHIP-8 emulator built in C++ w/SDL2.", langs: ["cplusplus", "sdl", "cmake"], color: "green"},
-  { name: "Microtransistor", link: "", imgSrc: "./images/microtransistor.gif", desc: "Single-player first person shooter built in Unity.", langs: ["unity", "csharp", "blender"], color: "yellow"},
-  { name: "PRAPP", link: "https://www.youtube.com/watch?v=YZIgejMaxrQ", imgSrc: "./images/prapp.png", desc: "Gamified SAT prep app built in Unity.", langs: ["unity", "csharp", "blender"], color: "blue"},
+  { name: "CHIP-8 Emulator", link: "", imgSrc: "./images/chip8.gif", desc: "CHIP-8 emulator built in C++ w/SDL2.", langs: ["cplusplus", "sdl", "cmake"], color: "green" },
+  { name: "Microtransistor", link: "", imgSrc: "./images/microtransistor.gif", desc: "Single-player first person shooter built in Unity.", langs: ["unity", "csharp", "blender"], color: "yellow" },
+  { name: "PRAPP", link: "https://www.youtube.com/watch?v=YZIgejMaxrQ", imgSrc: "./images/prapp.png", desc: "Gamified SAT prep app built in Unity.", langs: ["unity", "csharp", "blender"], color: "blue" },
   // { name: "The Spyder", link: "https://github.com/hyungwlee/hyel-spyder", imgSrc: "./images/thespyder.gif", desc: "Dodge oncoming traffic as you escape a hungry spider! Survival is futile...", langs: ["swift", "spritekit"] }
   // TODO: Fix image/gif scaling, add colors!
 ]
@@ -75,6 +91,7 @@ function App() {
     <Experience
       companyName={exp.companyName}
       role={exp.role}
+      details={exp.details}
       imgSrc={exp.imgSrc}
       bullets={exp.bullets}
     />
@@ -103,15 +120,15 @@ function App() {
         </ul>
       </nav>
       <Profile />
-      <ul className="language-list flex-centered-all flex-row gapped text-big">
+      <ul className="language-list flex-centered-v flex-row gapped text-big">
         {langsList}
       </ul>
       <h1>About Me</h1>
-      <ul>
+      <ul className="about-list flex-col gapped">
         {aboutsList}
       </ul>
       <h1>Experience</h1>
-      <ul className="flex-col gapped">
+      <ul className="flex-centered-v flex-col gapped">
         {experienceList}
       </ul>
       <h1>Projects</h1>

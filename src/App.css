@@ -15,6 +15,11 @@ h1 {
   paint-order: markers stroke fill;
 }
 
+b {
+  font-style: bold;
+  font-weight: bold;
+}
+
 #glob-parent {
   gap: 30px;
 }
@@ -61,14 +66,18 @@ h1 {
   gap: 8px;
 }
 
+.gapped-more {
+  gap: 20px;
+}
+
 /* Grid display */
 
 .grid {
   display: grid;
 
-  /* 2x2 grid */
-  grid-template-rows: repeat(2, 300px);
-  grid-template-columns: repeat(2, 300px);
+  /* 3x3 grid */
+  grid-template-rows: repeat(2, 350px);
+  grid-template-columns: repeat(2, 350px);
 }
 
 .grid-item {
@@ -108,12 +117,16 @@ h1 {
   font-size: 1.75rem;
 }
 
+.text-medium {
+  font-size: 1.25rem;
+}
+
 .image-frame {
   /* Frame color */
   background-color: rgba(19, 26, 54, 1);
 
   /* Frame itself */
-  padding: 20px;
+  padding: 15px;
 }
 
 .language-list {
@@ -130,19 +143,24 @@ h1 {
   background-color: rgba(19, 26, 54, 1);
   padding: 10px;
 
-  /* Make text box as big as text inside it */
-  width: min-content;
+  width: 40%;
   height: min-content;
 }
 
-.experience-info {
+.experience {
   /* Background */
   background-color: rgba(19, 26, 54, 1);
-  padding: 10px;
+  padding: 20px;
 
   /* Make text box as big as text inside it */
-  width: max-content;
+  width: 40%;
   height: min-content;
+
+  list-style-type: none;
+}
+
+.experience-content {
+  width: 100%;
 }
 
 .profile {
@@ -221,8 +239,14 @@ h1 {
 
   border-left: 0.5px solid white;
   border-right: 0.5px solid white;
+}
 
-  /* TODO: Fix l, r borders */
+.navbar-list> :first-child {
+  border-left: none;
+}
+
+.navbar-list> :last-child {
+  border-right: none;
 }
 
 .max-width {
@@ -288,4 +312,18 @@ h1 {
 
 .bg-yellow {
   background-color: rgba(255, 156, 51, 1);
+}
+
+.pixelated {
+  /* Nearest-neighbor resizing */
+  image-rendering: pixelated;
+}
+
+/* Move odd left, even right */
+.about-list> :nth-child(odd) {
+  transform: translateX(8%)
+}
+
+.about-list> :nth-child(even) {
+  transform: translateX(-8%)
 }
