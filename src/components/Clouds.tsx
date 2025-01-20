@@ -3,7 +3,7 @@ const cloudDimensions = [212 / 1.5, 115 / 1.5]
 function Cloud() {
   return (
     <img
-      className="cloud"
+      className="pixelated"
       src="./images/cloud.png"
       width={`${cloudDimensions[0]}`}
       height={`${cloudDimensions[1]}`} />
@@ -12,7 +12,7 @@ function Cloud() {
 
 function Clouds() {
   return (
-    <div className="clouds">
+    <div id="clouds">
       <Cloud />
       <Cloud />
       <Cloud />

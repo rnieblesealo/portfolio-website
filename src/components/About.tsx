@@ -11,12 +11,12 @@ function About({ imgSrc, imgAlt, details }: AboutProps) {
     <li>
       <div className="flex-row flex-centered-all">
         <img
-          className ="image-frame normal-body-text pixelated"
+          className ="dark-blue-bg padding-frame pixelated"
           src={`${imgSrc}`}
           width={`${aboutImgDimensions[0]}`}
           height={`${aboutImgDimensions[1]}`}
           alt={`${imgAlt}`} />
-        <p className="about-info normal-body-text bold-text">{details}</p>
+        <p className="dark-blue-bg padding-frame funnel-sans"><b>{details}</b></p>
       </div>
     </li>
   )

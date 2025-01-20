@@ -1,6 +1,8 @@
 import './App.css'
 import Clouds from "./components/Clouds.tsx"
 import NavbarItem from "./components/NavbarItem.tsx"
+import NavbarIcon from "./components/NavbarIcon.tsx"
+import NavbarIconGroup from "./components/NavbarIconGroup.tsx"
 import Language from "./components/Language.tsx"
 import About from "./components/About.tsx"
 import Experience from "./components/Experience.tsx"
@@ -74,7 +76,20 @@ const PROJECTS = [
   // TODO: Fix image/gif scaling, add colors!
 ]
 
+const NAV_ICONS = [
+  { icon: "github", url: "/" },
+  { icon: "linkedin", url: "/" },
+  { icon: "readthedocs", url: "/" },
+]
+
 function App() {
+  const navIcons = NAV_ICONS?.map((nav) => (
+    <NavbarIcon
+      icon={nav.icon}
+      url={nav.url}
+    />
+  ))
+
   const langsList = LANGUAGES?.map((lang) => (
     <Language lang={lang} />
   ))
@@ -111,20 +126,21 @@ function App() {
   return (
     <div id="glob-parent" className="flex-centered-v flex-col">
       <Clouds />
-      <nav className="navbar">
-        <ul className="flex-centered-all max-width max-height navbar-list">
+      <nav id="navbar" className="dark-blue-bg">
+        <ul className="flex-centered-all max-width max-height walled-list">
           <NavbarItem text="Home" url="/" />
           <NavbarItem text="About" url="/" />
           <NavbarItem text="Experience" url="/" />
           <NavbarItem text="Projects" url="/" />
+          <NavbarIconGroup icons={navIcons} />
         </ul>
       </nav>
       <Profile />
-      <ul className="language-list flex-centered-v flex-row gapped text-big">
+      <ul className="padding-frame dark-blue-bg flex-centered-v flex-row gapped">
         {langsList}
       </ul>
       <h1>About Me</h1>
-      <ul className="about-list flex-col gapped">
+      <ul id="about-list" className="flex-centered-all flex-col gapped">
         {aboutsList}
       </ul>
       <h1>Experience</h1>
@@ -132,7 +148,7 @@ function App() {
         {experienceList}
       </ul>
       <h1>Projects</h1>
-      <ul className="grid gapped">
+      <ul className="grid2x2 gapped">
         {projectList}
       </ul >
       <footer>

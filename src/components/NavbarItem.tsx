@@ -5,7 +5,7 @@ interface NavbarItemProps {
 
 function NavbarItem({ text, url }: NavbarItemProps) {
   return (
-    <li className="flex-centered-all navbar-item pixel-body-text">
+    <li className="flex-centered-all max-width max-height tiny5 walled-list-item">
       <a href={url}>{text}</a>
     </li>
   )

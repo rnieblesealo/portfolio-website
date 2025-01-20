@@ -16,10 +16,19 @@ function Project({ name, link, imgSrc, desc, langs, color }: ProjectProps) {
 
   return (
     <li className="flex-centered-all flex-col">
-      <a href={link} className="flex-centered-v flex-col project grid-item gapped">
-        <h3 className={`project-heading flex-centered-all normal-body-text text-bold text-big bg-${color}`}>{name}</h3>
-        <img className="project-img normal-body-text" src={imgSrc} alt={`${name} image/GIF`} />
-        <p className="flex-centered-all project-desc normal-body-text semibold-text">{desc}</p>
+      <a href={link} className="
+        flex-centered-v 
+        flex-col 
+        max-width 
+        max-height 
+        include-padding 
+        gapped
+        dark-blue-bg
+        padding-frame 
+        ">
+        <h3 className={`project-heading flex-centered-all funnel-sans text-bold text-big bg-${color}`}>{name}</h3>
+        <img className="project-img funnel-sans" src={imgSrc} alt={`${name} image/GIF`} />
+        <p className="flex-centered-all project-desc funnel-sans semibold-text">{desc}</p>
         <ul className="flex-centered-all flex-row text-big gapped">
           {langsList}
         </ul>
