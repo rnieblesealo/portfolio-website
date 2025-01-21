@@ -1,11 +1,11 @@
 ## First Deployment 1/22!
 
 ### 1/20 & 1/21
-- [ ] Fix CSS
+- [x] Fix CSS
     - Fix commonalities
     - Fix busted flex
     - Just make sure everything's in place...
-- [ ] Add all projects
+- [x] Add all projects
 - [ ] Fill in links
 - [ ] "And I'm a software developer!"
 - [ ] Add technologies and languages 

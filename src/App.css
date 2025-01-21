@@ -125,6 +125,10 @@ img {
   background-color: rgba(255, 156, 51, 1);
 }
 
+.purple-bg {
+  background-color: rgba(116, 59, 237, 1);
+}
+
 /* Foreground colors */
 
 .white-fg {
@@ -169,10 +173,10 @@ img {
 .grid2x2 {
   display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto auto; 
 
-  width: 130%;
+  width: 150%;
 }
 
 .square {

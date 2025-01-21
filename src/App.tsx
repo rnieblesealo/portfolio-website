@@ -68,12 +68,14 @@ const EXPERIENCES = [
 ]
 
 const PROJECTS = [
-  { name: "Dower Tefense", link: "https://github.com/rnieblesealo/cpp-sdl-td", imgSrc: "./images/dower-tefense.gif", desc: "Point-and-click tower defense game built in C++ using SDL2 for graphics.", langs: ["cplusplus", "sdl", "cmake"], color: "red" },
-  { name: "CHIP-8 Emulator", link: "", imgSrc: "./images/chip8.gif", desc: "CHIP-8 emulator built in C++ w/SDL2.", langs: ["cplusplus", "sdl", "cmake"], color: "green" },
-  { name: "Microtransistor", link: "", imgSrc: "./images/microtransistor.gif", desc: "Single-player first person shooter built in Unity.", langs: ["unity", "csharp", "blender"], color: "yellow" },
-  { name: "PRAPP", link: "https://www.youtube.com/watch?v=YZIgejMaxrQ", imgSrc: "./images/prapp.png", desc: "Gamified SAT prep app built in Unity.", langs: ["unity", "csharp", "blender"], color: "blue" },
-  // { name: "The Spyder", link: "https://github.com/hyungwlee/hyel-spyder", imgSrc: "./images/thespyder.gif", desc: "Dodge oncoming traffic as you escape a hungry spider! Survival is futile...", langs: ["swift", "spritekit"] }
-  // TODO: Fix image/gif scaling, add colors!
+  { name: "Dower Tefense", link: "https://github.com/rnieblesealo/cpp-sdl-td", imgSrc: "./images/dower-tefense.gif", desc: "Point-and-click tower defense game built in C++ using SDL2 for graphics.", langs: ["cplusplus", "sdl", "cmake"], color: "green" },
+  { name: "CHIP-8 Emulator", link: "", imgSrc: "./images/chip8.gif", desc: "CHIP-8 emulator built in C++ w/SDL2.", langs: ["cplusplus", "sdl", "cmake"], color: "blue" },
+  { name: "The Spyder", link: "https://github.com/hyungwlee/hyel-spyder", imgSrc: "./images/thespyder.gif", desc: "Dodge oncoming traffic as you escape a hungry spider!", langs: ["swift", "xcode", "figma"], color: "purple"},
+  { name: "Microtransistor", link: "", imgSrc: "./images/microtransistor.gif", desc: "Single-player first person shooter built in Unity.", langs: ["unity", "csharp"], color: "yellow" },
+  { name: "Pomodoro Extension", link: "https://github.com/rnieblesealo/pomodoro", imgSrc: "./images/pomodoro.gif", desc: "Pomodoro timer Firefox extension.", langs: ["html5", "css3", "javascript"], color: "red" },
+  { name: "mysh", link: "https://github.com/rnieblesealo/c-mysh", imgSrc: "./images/mysh.gif", desc: "UNIX shell built in C.", langs: ["c", "linux", "make" ], color: "green"},
+  { name: "Skip List", link: "https://github.com/rnieblesealo/java-skiplist", imgSrc: "./images/skiplist.png", desc: "Skip list data structure implementation in Java.", langs: ["java" ], color: "purple" },
+  { name: "PRAPP", link: "https://www.youtube.com/watch?v=YZIgejMaxrQ", imgSrc: "./images/prapp.png", desc: "Gamified SAT prep app built in Unity.", langs: ["unity", "csharp", "blender"], color: "yellow" },
 ]
 
 const NAV_ICONS = [
@@ -141,7 +143,7 @@ function App() {
           {langsList}
         </ul>
         <h1>About Me</h1>
-        <ul id="about-list" className="flex-centered-all flex-col gapped">
+        <ul id="about-list" className="flex-centered-all flex-col gapped-more">
           {aboutsList}
         </ul>
         <h1>Experience</h1>
