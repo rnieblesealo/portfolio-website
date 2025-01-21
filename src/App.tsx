@@ -124,7 +124,7 @@ function App() {
   ))
 
   return (
-    <div id="glob-parent" className="flex-centered-v flex-col">
+    <>
       <Clouds />
       <nav id="navbar" className="dark-blue-bg">
         <ul className="flex-centered-all max-width max-height walled-list">
@@ -135,26 +135,28 @@ function App() {
           <NavbarIconGroup icons={navIcons} />
         </ul>
       </nav>
-      <Profile />
-      <ul className="padding-frame dark-blue-bg flex-centered-v flex-row gapped">
-        {langsList}
-      </ul>
-      <h1>About Me</h1>
-      <ul id="about-list" className="flex-centered-all flex-col gapped">
-        {aboutsList}
-      </ul>
-      <h1>Experience</h1>
-      <ul className="flex-centered-v flex-col gapped">
-        {experienceList}
-      </ul>
-      <h1>Projects</h1>
-      <ul className="grid2x2 gapped">
-        {projectList}
-      </ul >
-      <footer>
-        {/* TODO: Add heart using FontAwesome */}
-      </footer>
-    </div>
+      <div id="content" className="half-width flex-centered-v flex-col gapped-more">
+        <Profile />
+        <ul className="padding-frame dark-blue-bg flex-centered-v flex-row gapped">
+          {langsList}
+        </ul>
+        <h1>About Me</h1>
+        <ul id="about-list" className="flex-centered-all flex-col gapped">
+          {aboutsList}
+        </ul>
+        <h1>Experience</h1>
+        <ul className="flex-centered-all flex-col gapped-more">
+          {experienceList}
+        </ul>
+        <h1>Projects</h1>
+        <ul className="grid2x2 gapped">
+          {projectList}
+        </ul >
+        <footer>
+          {/* TODO: Add heart using FontAwesome */}
+        </footer>
+      </div>
+    </>
   )
 }
 

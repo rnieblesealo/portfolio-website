@@ -16,10 +16,10 @@ function Experience({ companyName, role, details, imgSrc, bullets }: ExperienceP
   ))
 
   return (
-    <li className="flex-centered-all max-width">
-      <div className="flex-row gapped-more experience">
-        <img className="funnel-sans" src={imgSrc} width={`${expImgDimensions[0]}`} height={`${expImgDimensions[1]}`} alt={`${companyName} logo`} />
-        <div className="flex-col gapped max-width">
+    <li className="max-width">
+      <div className="flex-row gapped-more dark-blue-bg padding-frame">
+        <img src={imgSrc} width={`${expImgDimensions[0]}`} height={`${expImgDimensions[1]}`} alt={`${companyName} logo`} />
+        <div className="flex-col gapped">
           <h2 className="funnel-sans">{companyName}</h2>
           <h3 className="funnel-sans">{role}</h3>
           <p className="funnel-sans">{details}</p>
