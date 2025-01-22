@@ -1,1 +1,1 @@
-export const baseName="portfolio_website"
+export const baseName="personal-website"
