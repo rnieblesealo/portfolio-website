@@ -455,10 +455,15 @@ img {
 }
 
 .border-hover {
-  border: none; 
+  border: none;
   transition: border 0 ease;
 }
 
 .border-hover:hover {
   border: 5px solid white;
+}
+
+.light-stroke {
+  -webkit-text-stroke: 5px #12578c;
+  paint-order: markers stroke fill;
 }

@@ -4,7 +4,7 @@ function Cloud() {
   return (
     <img
       className="pixelated"
-      src="./images/cloud.png"
+      src="./images/cloud-b.png"
       width={`${cloudDimensions[0]}`}
       height={`${cloudDimensions[1]}`} />
   )
