@@ -1,5 +1,5 @@
 interface TimeLabelProps {
-  from: number
+  from?: string 
   to?: string
 }
 
