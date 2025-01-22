@@ -9,7 +9,7 @@ const aboutImgDimensions = [100, 100]
 function About({ imgSrc, imgAlt, details }: AboutProps) {
   return (
     <li className="max-width">
-      <div className="flex-row flex-centered-all">
+      <div className="flex-row flex-centered-all selectable select-grow">
         <img
           className ="dark-blue-bg padding-frame pixelated"
           src={`${imgSrc}`}

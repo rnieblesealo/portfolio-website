@@ -1,11 +1,14 @@
 interface LanguageProps {
   lang: string
+  useFa?: boolean
 }
 
-function Language({ lang }: LanguageProps) {
+function Language({ lang, useFa }: LanguageProps) {
+  const usedIcon = useFa ? `fa-solid fa-${lang}` : `devicon-${lang}-plain`
+
   return (
-    <li>
-      <h2><i className={`devicon-${lang}-plain white-fg`} /></h2>
+    <li className="selectable select-grow">
+      <h2><i className={usedIcon}/></h2>
     </li>
   )
 }

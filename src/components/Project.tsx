@@ -5,8 +5,8 @@ interface ProjectProps {
   link: string
   imgSrc: string
   desc: string
-  langs: string[] | undefined
-  color: string | undefined
+  langs?: string[]
+  color?: string
 }
 
 function Project({ name, link, imgSrc, desc, langs, color }: ProjectProps) {
@@ -16,7 +16,8 @@ function Project({ name, link, imgSrc, desc, langs, color }: ProjectProps) {
 
   return (
     <li className="flex-centered-all flex-col">
-      <a href={link} className="
+      <a href={link} target="_blank" className="
+        border-hover
         flex-centered-v 
         flex-col 
         max-width 
@@ -25,10 +26,12 @@ function Project({ name, link, imgSrc, desc, langs, color }: ProjectProps) {
         gapped
         dark-blue-bg
         padding-frame 
+        selectable
+        select-grow-less
         ">
-        <h3 className={`project-heading flex-centered-all funnel-sans text-bold text-big max-width ${color}-bg`}><b>{name}</b></h3>
+        <h3 className={`project-heading flex-centered-all funnel-sans text-bold max-width ${color}-bg center-text include-padding`}><b>{name}</b></h3>
         <img className="funnel-sans square max-width crop-to-fit" src={imgSrc} alt={`${name} image/GIF`} />
-        <p className="flex-centered-all project-desc funnel-sans semibold-text">{desc}</p>
+        <p className="flex-centered-all project-desc funnel-sans center-text">{desc}</p>
         <ul className="flex-centered-all flex-row text-big gapped">
           {langsList}
         </ul>

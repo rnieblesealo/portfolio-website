@@ -1,14 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100..900&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Tiny5&display=swap');
 
-#root {
-  /* Center entire page */
-  display: flex;
-  justify-content: center;
-}
-
 #content {
   /* Place everything on same layer so that we can place backdrop elements behind */
   z-index: 1;
+
+  /* Center content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 body {
@@ -65,6 +64,20 @@ img {
   /* Style alt text */
   font-family: "Funnel Sans", sans-serif;
   color: white;
+}
+
+/* Text */
+
+.center-text {
+  text-align: center;
+}
+
+.larger-text {
+  font-size: 1.6rem;
+}
+
+.largest-text {
+  font-size: 2rem;
 }
 
 /* Width + height */
@@ -131,8 +144,16 @@ img {
 
 /* Foreground colors */
 
+.red-fg {
+  color: red;
+}
+
 .white-fg {
   color: white;
+}
+
+.dark-blue-fg {
+  color: rgba(19, 26, 54, 1);
 }
 
 /* Flex display modes */
@@ -168,15 +189,25 @@ img {
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 /* Grid display modes */
 
 .grid2x2 {
   display: grid;
 
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto; 
+  grid-template-rows: auto auto;
 
-  width: 150%;
+  width: 90%;
+}
+
+@media (min-width: 1000px) {
+  .grid2x2 {
+    width: 60%;
+  }
 }
 
 .square {
@@ -204,11 +235,21 @@ img {
   padding: 15px;
 }
 
-/* Margin */
+/* Top margin */
+/* This is some really, really awful CSS practice, I think... 
+/* Oh well! We learn as we go :] */
 
 .top-margin {
   /* Give initial offset so it pushes everything a bit down */
   margin-top: 50px;
+}
+
+.slight-top-margin {
+  margin-top: 25px;
+}
+
+.slighter-top-margin {
+  margin-top: 8px;
 }
 
 /* Bullet points */
@@ -251,10 +292,42 @@ img {
   object-fit: cover;
 }
 
+/* Animation */
+
+.selectable {
+  cursor: pointer;
+  transition: color 0.5s ease, transform 0.2s ease;
+}
+
+.select-yellow:hover {
+  color: yellow;
+
+  /* Keep top so we can click it */
+  z-index: 999;
+}
+
+.select-grow:hover {
+  transform: scale(120%);
+}
+
+.select-grow-less:hover {
+  transform: scale(105%);
+}
+
+.select-grow-text:hover {
+  font-size: 130%;
+}
+
 /* Specific */
 
 .project-heading {
   height: 40px;
+
+  /* Make text smaller for better fit */
+  font-size: 1.15rem;
+
+  /* Make it cushy */
+  padding: 5px;
 }
 
 #profile-name {
@@ -270,12 +343,20 @@ img {
   -webkit-text-stroke: 40px rgba(19, 26, 54, 1);
 }
 
+#profile-title {
+  /* These are random to make it look good lol */
+  font-size: 3rem;
+  -webkit-text-stroke: 15px rgba(19, 26, 54, 1);
+  letter-spacing: -3px;
+  color: yellow;
+}
+
 #navbar {
   /* Own positioning*/
   position: fixed;
 
   /* Cover full screen; take consistent amt. of vertical height */
-  width: 100%;
+  width: 100vw;
   height: 30px;
 
   /* Place above everything else! */
@@ -286,8 +367,11 @@ img {
 #clouds {
   position: fixed;
 
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+
+  /* Ensure is at very, very back! */
+  z-index: -999;
 }
 
 #clouds>* {
@@ -326,9 +410,55 @@ img {
 /* Move odd left, even right */
 
 #about-list> :nth-child(odd) {
-  transform: translateX(8%)
+  transform: translateX(8%) rotate(3deg);
 }
 
 #about-list> :nth-child(even) {
-  transform: translateX(-8%)
+  transform: translateX(-8%) rotate(-1deg);
+}
+
+#beach-footer {
+  margin-top: 4%;
+  position: absolute;
+  z-index: -400;
+}
+
+#bg-ocean {
+  height: 200px;
+}
+
+#bg-sand {
+  /* Accidental, but makes it look like we're going closer to sand when zooming in! */
+  height: 30px;
+}
+
+@media (max-width: 700px) {
+
+  #langs-list,
+  #about-list,
+  .experience-card {
+    width: 80%;
+  }
+
+  .grid2x2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.bw-hover {
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.bw-hover:hover {
+  filter: none;
+}
+
+.border-hover {
+  border: none; 
+  transition: border 0 ease;
+}
+
+.border-hover:hover {
+  border: 5px solid white;
 }

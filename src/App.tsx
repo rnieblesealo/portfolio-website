@@ -2,27 +2,11 @@ import './App.css'
 import Clouds from "./components/Clouds.tsx"
 import NavbarItem from "./components/NavbarItem.tsx"
 import NavbarIcon from "./components/NavbarIcon.tsx"
-import NavbarIconGroup from "./components/NavbarIconGroup.tsx"
-import Language from "./components/Language.tsx"
 import About from "./components/About.tsx"
 import Experience from "./components/Experience.tsx"
 import Profile from "./components/Profile.tsx"
 import Project from "./components/Project.tsx"
 
-const LANGUAGES = [
-  "html5",
-  "css3",
-  "javascript",
-  "typescript",
-  "python",
-  "java",
-  "swift",
-  "lua",
-  "c",
-  "cplusplus",
-  "csharp",
-  "tex",
-]
 
 const ABOUT = [
   { imgSrc: "./images/ucf.png", imgAlt: "Knightro", details: "I attend UCF for a bachelor's in Computer Science and a minor in Math!" },
@@ -35,67 +19,61 @@ const ABOUT = [
 
 const EXPERIENCES = [
   {
+    companyName: "HYEL, Inc.",
+    role: "Software Engineering Intern",
+    details: "At HYEL, I had the opportunity to create a complete, production-ready software product, from the design phase all the way to shipping. Check out \"The Spyder\" in the HYEL app/my projects below!",
+    imgSrc: "./images/hyel.jpg",
+    bullets: [
+      "Designed a complete iOS app using Figma",
+      "Implemented it using Xcode, UIKit, Swift and SpriteKit.",
+      "Ensured a consistent 60 FPS and reduced render load by 30% for its production version.",
+    ],
+    from: "Sep. 2024",
+    to: "Dec. 2024",
+    bulletsText: "What I Did"
+  },
+  {
     companyName: "KnightHacks",
     role: "Workshop Instructor",
-    details: "I'm currently an iOS development workshop teacher for KnightHacks, where I introduce curious students to the world of mobile app dev. through a beginner-friendly, fun game project. Below are some of the topics I taught!",
+    details: "I'm soon going to host my own KnightHacks workshop, where I'll be introducing curious minds to the world of mobile dev with Swift using a beginner-friendly game project!",
     imgSrc: "./images/knighthacks.jpg",
     bullets: [
-      "Using XCode and its file explorer, inspector, and debugger.",
+      "The Xcode IDE and its file explorer, inspector, and debugger.",
       "The Swift language and its special features (optionals, unwrapping, computed properties, etc.)",
-      "Common iOS API's and frameworks, including SpriteKit, UIKit, and AVFoundation.",
-      "Multithreading using DispatchQueue",
       "iOS app architecture (ViewControllers, SceneControllers, Windows, etc.)"
-    ]
+    ],
+    from: "Planning Jan. 2025",
+    to: "Teaching February 2025!",
+    bulletsText: "What I'll Teach"
   },
   {
     companyName: "KnightHacks",
     role: "Full-Stack Project Lead",
+    details: "As a team of 5, we'll be designing and implementing Bromodoro, a full-stack app designed to make productivity more social and fun using the genius Pomodoro Technique.",
     imgSrc: "./images/knighthacks.jpg",
     bullets: [
-      "Taught iOS",
-      "Lead fullstack project"
-    ]
-  },
-  {
-    companyName: "HYEL, Inc.",
-    role: "iOS Software Engineer",
-    imgSrc: "./images/hyel.jpg",
-    bullets: [
-      "Built iOS app from scratch",
-      "Shipped it in only 4 months!"
-    ]
+      "Developing a modern, responsive (and fun!) frontend using Vite + React.",
+      "Leveraging Supabase and its API for our database and deployment needs.",
+      "Creating a fun app that'll hopefully get you to do your homework!",
+    ],
+    from: "Jan. 2025",
+    to: "April 2025",
+    bulletsText: "Our Activities"
   },
 ]
 
 const PROJECTS = [
   { name: "Dower Tefense", link: "https://github.com/rnieblesealo/cpp-sdl-td", imgSrc: "./images/dower-tefense.gif", desc: "Point-and-click tower defense game built in C++ using SDL2 for graphics.", langs: ["cplusplus", "sdl", "cmake"], color: "green" },
-  { name: "CHIP-8 Emulator", link: "", imgSrc: "./images/chip8.gif", desc: "CHIP-8 emulator built in C++ w/SDL2.", langs: ["cplusplus", "sdl", "cmake"], color: "blue" },
-  { name: "The Spyder", link: "https://github.com/hyungwlee/hyel-spyder", imgSrc: "./images/thespyder.gif", desc: "Dodge oncoming traffic as you escape a hungry spider!", langs: ["swift", "xcode", "figma"], color: "purple"},
-  { name: "Microtransistor", link: "", imgSrc: "./images/microtransistor.gif", desc: "Single-player first person shooter built in Unity.", langs: ["unity", "csharp"], color: "yellow" },
+  { name: "CHIP-8 Emulator", link: "https://github.com/rnieblesealo/cpp-chip8-emu", imgSrc: "./images/chip8.gif", desc: "CHIP-8 emulator built in C++ w/SDL2.", langs: ["cplusplus", "sdl", "cmake"], color: "blue" },
+  { name: "The Spyder", link: "https://github.com/hyungwlee/hyel-spyder", imgSrc: "./images/thespyder.gif", desc: "Dodge oncoming traffic as you escape a hungry spider!", langs: ["swift", "xcode", "figma"], color: "purple" },
+  { name: "Microtransistor", link: "https://www.instagram.com/microtransistor/", imgSrc: "./images/microtransistor.gif", desc: "Single-player first person shooter built in Unity.", langs: ["unity", "csharp"], color: "yellow" },
   { name: "Pomodoro Extension", link: "https://github.com/rnieblesealo/pomodoro", imgSrc: "./images/pomodoro.gif", desc: "Pomodoro timer Firefox extension.", langs: ["html5", "css3", "javascript"], color: "red" },
-  { name: "mysh", link: "https://github.com/rnieblesealo/c-mysh", imgSrc: "./images/mysh.gif", desc: "UNIX shell built in C.", langs: ["c", "linux", "make" ], color: "green"},
-  { name: "Skip List", link: "https://github.com/rnieblesealo/java-skiplist", imgSrc: "./images/skiplist.png", desc: "Skip list data structure implementation in Java.", langs: ["java" ], color: "purple" },
+  { name: "mysh", link: "https://github.com/rnieblesealo/c-mysh", imgSrc: "./images/mysh.gif", desc: "UNIX shell built in C.", langs: ["c", "linux", "make"], color: "green" },
+  { name: "Skip List", link: "https://github.com/rnieblesealo/java-skiplist", imgSrc: "./images/skiplist.png", desc: "Skip list data structure implementation in Java.", langs: ["java"], color: "purple" },
   { name: "PRAPP", link: "https://www.youtube.com/watch?v=YZIgejMaxrQ", imgSrc: "./images/prapp.png", desc: "Gamified SAT prep app built in Unity.", langs: ["unity", "csharp", "blender"], color: "yellow" },
 ]
 
-const NAV_ICONS = [
-  { icon: "github", url: "/" },
-  { icon: "linkedin", url: "/" },
-  { icon: "readthedocs", url: "/" },
-]
-
 function App() {
-  const navIcons = NAV_ICONS?.map((nav) => (
-    <NavbarIcon
-      icon={nav.icon}
-      url={nav.url}
-    />
-  ))
-
-  const langsList = LANGUAGES?.map((lang) => (
-    <Language lang={lang} />
-  ))
-
   const aboutsList = ABOUT?.map((about) => (
     <About
       imgSrc={about.imgSrc}
@@ -111,6 +89,9 @@ function App() {
       details={exp.details}
       imgSrc={exp.imgSrc}
       bullets={exp.bullets}
+      from={exp.from}
+      to={exp.to}
+      bulletsText={exp.bulletsText}
     />
   ))
 
@@ -128,35 +109,33 @@ function App() {
   return (
     <>
       <Clouds />
-      <nav id="navbar" className="dark-blue-bg">
+      <nav id="navbar" className="dark-blue-bg max-width">
         <ul className="flex-centered-all max-width max-height walled-list">
-          <NavbarItem text="Home" url="/" />
-          <NavbarItem text="About" url="/" />
-          <NavbarItem text="Experience" url="/" />
-          <NavbarItem text="Projects" url="/" />
-          <NavbarIconGroup icons={navIcons} />
+          <NavbarItem text="Home" shortText="HOME" url="#home" />
+          <NavbarItem text="About" shortText="ABT" url="#about" />
+          <NavbarItem text="Experience" url="#experience" />
+          <NavbarItem text="Projects" shortText="PROJ" url="#projects" />
+          <NavbarIcon icon="file" url="https://drive.google.com/file/d/1rMSzAnwvh3kyHI4MEYZO7u0Gv7pUWuUb/view?usp=sharing" useFa={true} />
+          <NavbarIcon icon="github" url="https://github.com/rnieblesealo"/>
+          <NavbarIcon icon="linkedin" url="https://www.linkedin.com/in/rafael-niebles-6a227032a/" />
         </ul>
       </nav>
-      <div id="content" className="half-width flex-centered-v flex-col gapped-more">
-        <Profile />
-        <ul className="padding-frame dark-blue-bg flex-centered-v flex-row gapped">
-          {langsList}
-        </ul>
-        <h1>About Me</h1>
+      <div id="content" className="max-width flex-centered-v flex-col gapped-more">
+        <div id="home">
+          <Profile />
+        </div>
+        <h1 id="about">About Me</h1>
         <ul id="about-list" className="flex-centered-all flex-col gapped-more">
           {aboutsList}
         </ul>
-        <h1>Experience</h1>
+        <h1 id="experience">Experience</h1>
         <ul className="flex-centered-all flex-col gapped-more">
           {experienceList}
         </ul>
-        <h1>Projects</h1>
-        <ul className="grid2x2 gapped">
+        <h1 id="projects">Projects</h1>
+        <ul className="grid2x2 gapped min-content-width min-content-height">
           {projectList}
         </ul >
-        <footer>
-          {/* TODO: Add heart using FontAwesome */}
-        </footer>
       </div>
     </>
   )
