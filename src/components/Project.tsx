@@ -29,8 +29,8 @@ function Project({ name, link, imgSrc, desc, langs, color }: ProjectProps) {
         selectable
         select-grow-less
         ">
-        <h3 className={`project-heading flex-centered-all funnel-sans text-bold max-width ${color}-bg center-text include-padding`}><b>{name}</b></h3>
-        <img className="funnel-sans square max-width crop-to-fit" src={imgSrc} alt={`${name} image/GIF`} />
+        <h3 className={`project-heading flex-centered-all funnel-sans text-bold max-width center-text include-padding`} style={{backgroundColor: color}}><b>{name}</b></h3>
+        <img className="funnel-sans square max-width crop-to-fit pixelated" src={imgSrc} alt={`${name} image/GIF`} />
         <p className="flex-centered-all project-desc funnel-sans center-text">{desc}</p>
         <ul className="flex-centered-all flex-row text-big gapped">
           {langsList}

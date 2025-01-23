@@ -10,8 +10,8 @@ function NavbarIcon({ icon, url, useFa }: NavbarIconProps) {
     `devicon-${icon}-plain normal-body-text center-text`
 
   return (
-    <li className="flex-centered-all half-width max-height tiny5 walled-list-item selectable select-grow-text select-yellow">
-      <a href={url} className="flex-centered-all max-width max-height select-yellow" target="_blank">
+    <li className="flex-centered-all half-width max-height tiny5 walled-list-item selectable larger-text select-yellow">
+      <a href={url} className="flex-centered-all max-width max-height select-yellow select-grow-text" target="_blank">
         <i className={usedIcon} />
       </a>
     </li>

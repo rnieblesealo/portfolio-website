@@ -8,6 +8,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  font-optical-sizing: none;
 }
 
 body {
@@ -206,7 +208,7 @@ img {
 
 @media (min-width: 1000px) {
   .grid2x2 {
-    width: 60%;
+    width: 50%;
   }
 }
 
@@ -241,7 +243,7 @@ img {
 
 .top-margin {
   /* Give initial offset so it pushes everything a bit down */
-  margin-top: 50px;
+  margin-top: 75px;
 }
 
 .slight-top-margin {
@@ -296,7 +298,7 @@ img {
 
 .selectable {
   cursor: pointer;
-  transition: color 0.5s ease, transform 0.2s ease;
+  transition: color 0.5s ease, transform 0.2s ease font-size 0.2s ease;
 }
 
 .select-yellow:hover {
@@ -315,7 +317,7 @@ img {
 }
 
 .select-grow-text:hover {
-  font-size: 130%;
+  font-size: 180%;
 }
 
 /* Specific */
@@ -327,7 +329,6 @@ img {
   font-size: 1.15rem;
 
   /* Make it cushy */
-  padding: 5px;
 }
 
 #profile-name {
@@ -357,7 +358,7 @@ img {
 
   /* Cover full screen; take consistent amt. of vertical height */
   width: 100vw;
-  height: 30px;
+  height: 50px;
 
   /* Place above everything else! */
   /* Override precedence of more specific setting */
@@ -433,7 +434,6 @@ img {
 }
 
 @media (max-width: 700px) {
-
   #langs-list,
   #about-list,
   .experience-card {
@@ -442,6 +442,16 @@ img {
 
   .grid2x2 {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Larger navbar on mobile */
+
+  #navbar {
+    height: 70px; 
+  }
+
+  .top-margin {
+    margin-top: 90px;
   }
 }
 
@@ -455,15 +465,19 @@ img {
 }
 
 .border-hover {
-  border: none;
-  transition: border 0 ease;
+  outline: 0px solid #146BAE;
+  transition: outline 0.1s linear;
 }
 
 .border-hover:hover {
-  border: 5px solid white;
+  outline: 5px solid #146BAE;
 }
 
 .light-stroke {
   -webkit-text-stroke: 5px #12578c;
   paint-order: markers stroke fill;
+}
+
+.color-transition {
+  transition: color 0.1s linear;
 }

@@ -63,14 +63,14 @@ const EXPERIENCES = [
 ]
 
 const PROJECTS = [
-  { name: "Dower Tefense", link: "https://github.com/rnieblesealo/cpp-sdl-td", imgSrc: "./images/dower-tefense.gif", desc: "Point-and-click tower defense game built in C++ using SDL2 for graphics.", langs: ["cplusplus", "sdl", "cmake"], color: "green" },
-  { name: "CHIP-8 Emulator", link: "https://github.com/rnieblesealo/cpp-chip8-emu", imgSrc: "./images/chip8.gif", desc: "CHIP-8 emulator built in C++ w/SDL2.", langs: ["cplusplus", "sdl", "cmake"], color: "blue" },
-  { name: "The Spyder", link: "https://github.com/hyungwlee/hyel-spyder", imgSrc: "./images/thespyder.gif", desc: "Dodge oncoming traffic as you escape a hungry spider!", langs: ["swift", "xcode", "figma"], color: "purple" },
-  { name: "Microtransistor", link: "https://www.instagram.com/microtransistor/", imgSrc: "./images/microtransistor.gif", desc: "Single-player first person shooter built in Unity.", langs: ["unity", "csharp"], color: "yellow" },
-  { name: "Pomodoro Extension", link: "https://github.com/rnieblesealo/pomodoro", imgSrc: "./images/pomodoro.gif", desc: "Pomodoro timer Firefox extension.", langs: ["html5", "css3", "javascript"], color: "red" },
-  { name: "mysh", link: "https://github.com/rnieblesealo/c-mysh", imgSrc: "./images/mysh.gif", desc: "UNIX shell built in C.", langs: ["c", "linux", "make"], color: "green" },
-  { name: "Skip List", link: "https://github.com/rnieblesealo/java-skiplist", imgSrc: "./images/skiplist.png", desc: "Skip list data structure implementation in Java.", langs: ["java"], color: "purple" },
-  { name: "PRAPP", link: "https://www.youtube.com/watch?v=YZIgejMaxrQ", imgSrc: "./images/prapp.png", desc: "Gamified SAT prep app built in Unity.", langs: ["unity", "csharp", "blender"], color: "yellow" },
+  { name: "Dower Tefense", link: "https://github.com/rnieblesealo/cpp-sdl-td", imgSrc: "./images/compressed-gifs/dower.gif", desc: "Point-and-click tower defense game built in C++ using SDL2 for graphics.", langs: ["cplusplus", "sdl", "cmake"] },
+  { name: "CHIP-8 Emulator", link: "https://github.com/rnieblesealo/cpp-chip8-emu", imgSrc: "./images/compressed-gifs/chip8.gif", desc: "CHIP-8 emulator built in C++ w/SDL2.", langs: ["cplusplus", "sdl", "cmake"] },
+  { name: "The Spyder", link: "https://github.com/hyungwlee/hyel-spyder", imgSrc: "./images/compressed-gifs/spyder.gif", desc: "Dodge oncoming traffic as you escape a hungry spider!", langs: ["swift", "xcode", "figma"] },
+  { name: "Microtransistor", link: "https://www.instagram.com/microtransistor/", imgSrc: "./images/compressed-gifs/microtransistor.gif", desc: "Single-player first person shooter built in Unity.", langs: ["unity", "csharp"] },
+  { name: "Pomodoro Extension", link: "https://github.com/rnieblesealo/pomodoro", imgSrc: "./images/compressed-gifs/pomodoro.gif", desc: "Pomodoro timer Firefox extension.", langs: ["html5", "css3", "javascript"] },
+  { name: "mysh", link: "https://github.com/rnieblesealo/c-mysh", imgSrc: "./images/compressed-gifs/mysh.gif", desc: "UNIX shell built in C.", langs: ["c", "linux", "make"] },
+  { name: "Skip List", link: "https://github.com/rnieblesealo/java-skiplist", imgSrc: "./images/skiplist.png", desc: "Skip list data structure implementation in Java.", langs: ["java"] },
+  { name: "PRAPP", link: "https://www.youtube.com/watch?v=YZIgejMaxrQ", imgSrc: "./images/prapp.png", desc: "Gamified SAT prep app built in Unity.", langs: ["unity", "csharp", "blender"] },
 ]
 
 function App() {
@@ -95,14 +95,25 @@ function App() {
     />
   ))
 
-  const projectList = PROJECTS?.map((proj) => (
+  const colors = [
+    "#ed3b3b",
+    "#ff9c33",
+    "#32c75c",
+    "#31a379",
+    "#198ae1",
+    "#743bed",
+    "#ae59e3",
+    "#c43b5d",
+  ]
+
+  const projectList = PROJECTS?.map((proj, index) => (
     <Project
       name={proj.name}
       link={proj.link}
       imgSrc={proj.imgSrc}
       desc={proj.desc}
       langs={proj.langs}
-      color={proj.color}
+      color={colors[index]} 
     />
   ))
 
@@ -116,7 +127,7 @@ function App() {
           <NavbarItem text="Experience" url="#experience" />
           <NavbarItem text="Projects" shortText="PROJ" url="#projects" />
           <NavbarIcon icon="file" url="https://drive.google.com/file/d/1rMSzAnwvh3kyHI4MEYZO7u0Gv7pUWuUb/view?usp=sharing" useFa={true} />
-          <NavbarIcon icon="github" url="https://github.com/rnieblesealo"/>
+          <NavbarIcon icon="github" url="https://github.com/rnieblesealo" />
           <NavbarIcon icon="linkedin" url="https://www.linkedin.com/in/rafael-niebles-6a227032a/" />
         </ul>
       </nav>

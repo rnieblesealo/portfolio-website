@@ -7,7 +7,7 @@ interface NavbarItemProps {
 }
 
 function NavbarItem({ text, shortText, url }: NavbarItemProps) {
-  const mobilePortraitThreshold = 500;
+  const mobilePortraitThreshold = 800;
   const [isMobilePortrait, setIsMobilePortrait] = useState(window.innerWidth <= mobilePortraitThreshold);
 
   // NOTE:
@@ -28,7 +28,7 @@ function NavbarItem({ text, shortText, url }: NavbarItemProps) {
   }, [])
 
   console.log(isMobilePortrait);
-
+ 
   // Make shorter version of text on small screens so nav fits
   let showText = text;
   if (isMobilePortrait) {
@@ -40,8 +40,8 @@ function NavbarItem({ text, shortText, url }: NavbarItemProps) {
   }
 
   return (
-    <li className="flex-centered-all max-width max-height tiny5 walled-list-item selectable select-grow-text select-yellow">
-      <a href={url} className="flex-centered-all max-width max-height select-yellow">{showText}</a>
+    <li className="flex-centered-all max-width max-height tiny5 walled-list-item selectable larger-text select-yellow">
+      <a href={url} className="flex-centered-all max-width max-height select-yellow select-grow-text">{showText}</a>
     </li>
   )
 }
