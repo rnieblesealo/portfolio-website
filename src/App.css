@@ -298,7 +298,7 @@ img {
 
 .selectable {
   cursor: pointer;
-  transition: color 0.5s ease, transform 0.2s ease font-size 0.2s ease;
+  transition: color 0.5s ease, transform 0.2s ease, font-size 0.2s ease;
 }
 
 .select-yellow:hover {
@@ -317,7 +317,7 @@ img {
 }
 
 .select-grow-text:hover {
-  font-size: 180%;
+  font-size: 130%;
 }
 
 /* Specific */
@@ -327,8 +327,6 @@ img {
 
   /* Make text smaller for better fit */
   font-size: 1.15rem;
-
-  /* Make it cushy */
 }
 
 #profile-name {
