@@ -67,10 +67,10 @@ const PROJECTS = [
   { name: "CHIP-8 Emulator", link: "https://github.com/rnieblesealo/cpp-chip8-emu", imgSrc: "./images/compressed-gifs/chip8.gif", desc: "CHIP-8 emulator built in C++ w/SDL2.", langs: ["cplusplus", "sdl", "cmake"] },
   { name: "The Spyder", link: "https://github.com/hyungwlee/hyel-spyder", imgSrc: "./images/compressed-gifs/spyder.gif", desc: "Dodge oncoming traffic as you escape a hungry spider!", langs: ["swift", "xcode", "figma"] },
   { name: "Microtransistor", link: "https://www.instagram.com/microtransistor/", imgSrc: "./images/compressed-gifs/microtransistor.gif", desc: "Single-player first person shooter built in Unity.", langs: ["unity", "csharp"] },
-  { name: "Pomodoro Extension", link: "https://github.com/rnieblesealo/pomodoro", imgSrc: "./images/compressed-gifs/pomodoro.gif", desc: "Pomodoro timer Firefox extension.", langs: ["html5", "css3", "javascript"] },
+  { name: "Bromodoro", link: "https://github.com/Frankelly-Guzman/Bromodoro", imgSrc: "./images/compressed-gifs/pomodoro.gif", desc: "Social, gamified productivity using the Pomodoro Technique!", langs: ["nodejs", "typescript", "react", "supabase", "vite"] },
   { name: "mysh", link: "https://github.com/rnieblesealo/c-mysh", imgSrc: "./images/compressed-gifs/mysh.gif", desc: "UNIX shell built in C.", langs: ["c", "linux", "make"] },
   { name: "Skip List", link: "https://github.com/rnieblesealo/java-skiplist", imgSrc: "./images/skiplist.png", desc: "Skip list data structure implementation in Java.", langs: ["java"] },
-  { name: "PRAPP", link: "https://www.youtube.com/watch?v=YZIgejMaxrQ", imgSrc: "./images/prapp.png", desc: "Gamified SAT prep app built in Unity.", langs: ["unity", "csharp", "blender"] },
+  { name: "PRAPP", link: "https://www.youtube.com/watch?v=YZIgejMaxrQ", imgSrc: "./images/prapp.png", desc: "Gamified SAT prep built with Unity. Winner of the 2022 Congressional App Challenge.", langs: ["unity", "csharp", "blender"] },
 ]
 
 function App() {
@@ -126,7 +126,7 @@ function App() {
           <NavbarItem text="About" shortText="ABT" url="#about" />
           <NavbarItem text="Experience" url="#experience" />
           <NavbarItem text="Projects" shortText="PROJ" url="#projects" />
-          <NavbarIcon icon="file" url="https://drive.google.com/file/d/1rMSzAnwvh3kyHI4MEYZO7u0Gv7pUWuUb/view?usp=sharing" useFa={true} />
+          <NavbarIcon icon="file" url="https://drive.google.com/file/d/13bKNWzATA5Dr5jj-AngZtWSw6V1DpuRH/view?usp=sharing" useFa={true} />
           <NavbarIcon icon="github" url="https://github.com/rnieblesealo" />
           <NavbarIcon icon="linkedin" url="https://www.linkedin.com/in/rafael-niebles-6a227032a/" />
         </ul>
