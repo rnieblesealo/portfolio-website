@@ -66,9 +66,10 @@ const PROJECTS = [
   { name: "Bromodoro", link: "https://github.com/Frankelly-Guzman/Bromodoro", imgSrc: "./images/bromodoro-img.png", desc: "Social, gamified productivity with the Pomodoro Technique!", langs: ["typescript", "react", "vite", "tailwindcss", "docker", "supabase", "git", "postgresql"] },
   { name: "The Spyder", link: "https://github.com/hyungwlee/hyel-spyder", imgSrc: "./images/compressed-gifs/spyder.gif", desc: "Dodge oncoming traffic as you escape a hungry spider!", langs: ["swift", "xcode", "figma"] },
   { name: "CHIP-8 Emulator", link: "https://github.com/rnieblesealo/cpp-chip8-emu", imgSrc: "./images/compressed-gifs/chip8.gif", desc: "CHIP-8 emulator built in C++ w/SDL2.", langs: ["cplusplus", "sdl", "cmake"] },
-  { name: "Lucina", link: "https://github.com/ryanengphoto/lucina", imgSrc: "./images/compressed-gifs/lucina.gif", desc: "First-person survival horror game built with Unity!", langs: ["unity", "csharp"] },
-  { name: "Dower Tefense", link: "https://github.com/rnieblesealo/cpp-sdl-td", imgSrc: "./images/compressed-gifs/dower.gif", desc: "Point-and-click tower defense game built in C++ using SDL2 for graphics.", langs: ["cplusplus", "sdl", "cmake"] },
   { name: "Microtransistor", link: "https://www.instagram.com/microtransistor/", imgSrc: "./images/compressed-gifs/microtransistor.gif", desc: "Single-player first person shooter built in Unity.", langs: ["unity", "csharp"] },
+  { name: "Kanjo.AI", link: "https://github.com/rnieblesealo/kanjoai", imgSrc: "./images/compressed-gifs/kanjo-logo.gif", desc: "Custom emotion detection machine learning model!", langs: ["python", "pytorch"] },
+  { name: "Dower Tefense", link: "https://github.com/rnieblesealo/cpp-sdl-td", imgSrc: "./images/compressed-gifs/dower.gif", desc: "Point-and-click tower defense game built in C++ using SDL2 for graphics.", langs: ["cplusplus", "sdl", "cmake"] },
+  { name: "Lucina", link: "https://github.com/ryanengphoto/lucina", imgSrc: "./images/compressed-gifs/lucina.gif", desc: "First-person survival horror game built with Unity!", langs: ["unity", "csharp"] },
   { name: "mysh", link: "https://github.com/rnieblesealo/c-mysh", imgSrc: "./images/compressed-gifs/mysh.gif", desc: "UNIX shell built in C.", langs: ["c", "linux", "make"] },
   { name: "Skip List", link: "https://github.com/rnieblesealo/java-skiplist", imgSrc: "./images/skiplist.png", desc: "Skip list data structure implementation in Java.", langs: ["java"] },
   { name: "PRAPP", link: "https://www.youtube.com/watch?v=YZIgejMaxrQ", imgSrc: "./images/prapp.png", desc: "Gamified SAT prep built with Unity. Winner of the 2022 Congressional App Challenge.", langs: ["unity", "csharp", "blender"] },
@@ -105,6 +106,7 @@ function App() {
     "#743bed",
     "#ae59e3",
     "#c43b5d",
+    "#171717",
     "#171717"
   ]
 
